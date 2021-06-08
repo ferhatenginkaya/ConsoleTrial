@@ -1,0 +1,7 @@
+C:\Users\pc\OneDrive\Masaüstü\CA_AnimalsGame\CA_AnimalsGame\bin\Debug\CA_AnimalsGame.exe.config
+C:\Users\pc\OneDrive\Masaüstü\CA_AnimalsGame\CA_AnimalsGame\bin\Debug\CA_AnimalsGame.exe
+C:\Users\pc\OneDrive\Masaüstü\CA_AnimalsGame\CA_AnimalsGame\bin\Debug\CA_AnimalsGame.pdb
+C:\Users\pc\OneDrive\Masaüstü\CA_AnimalsGame\CA_AnimalsGame\obj\Debug\CA_AnimalsGame.csprojAssemblyReference.cache
+C:\Users\pc\OneDrive\Masaüstü\CA_AnimalsGame\CA_AnimalsGame\obj\Debug\CA_AnimalsGame.csproj.CoreCompileInputs.cache
+C:\Users\pc\OneDrive\Masaüstü\CA_AnimalsGame\CA_AnimalsGame\obj\Debug\CA_AnimalsGame.exe
+C:\Users\pc\OneDrive\Masaüstü\CA_AnimalsGame\CA_AnimalsGame\obj\Debug\CA_AnimalsGame.pdb
