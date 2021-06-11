@@ -8,6 +8,8 @@ namespace CA_AnimalsGame
 
     class Program
     {
+
+        //Soru
         /*
         Hayvanat Bahçesi Projesi
         500'e 500'lük bir alanda yaşayan 30 koyun (15 erkek,15 dişi), 10 inek (5 erkek,5 dişi), 10 tavuk,
@@ -35,8 +37,6 @@ namespace CA_AnimalsGame
             #region ornekAlma
             Arazi arazi = new Arazi();
             Random rnd = new Random();
-            
-
             #endregion
 
             #region Listeleme
@@ -58,7 +58,7 @@ namespace CA_AnimalsGame
             int tavukSayisi = tavukListesi.Count();
             #endregion
 
-            #region HayvanAraziEkleme
+            #region hayvanAraziEkleme
             foreach (var k in koyunListesi)
             {
                 arazi.Hayvanlar.Add(k);
@@ -85,11 +85,9 @@ namespace CA_AnimalsGame
             }
             #endregion
 
-
+            #region islemlerinOlduguYer
             foreach (var h in arazi.Hayvanlar)
             {
-             
-
                 //Avci konum verecek,
                 int araziRandomGenislik = rnd.Next(0, arazi.En);
                 int araziRandomYukseklik = rnd.Next(0, arazi.Boy);
@@ -104,18 +102,7 @@ namespace CA_AnimalsGame
                 Tavuk tavuk = new Tavuk();
                 Inek inek = new Inek();
 
-                //        koyun 2 birim,++
-                //kurt 3 birim,+
-                //inek 2 birim,
-                //tavuk 1 birim,+
-                //horoz 1 birim,+
-                //aslan 4 birim,+
-
-                //kurt'un bir konumu olmalı (x,y)
-                //koyun, tavuk, horoz konum tanımlanmalı (x,y)
-                //kurt'ın x değeri koyun'un x'ine eşit ve 
-
-
+                //Toplam 1000 haraketin oluşturulduğu yer
                 for (int i = 0; i < 1000; i++)
                 {
                     //Kurt Konum verecek,              
@@ -149,8 +136,6 @@ namespace CA_AnimalsGame
                     inek.KonumX = inekKonumGenislik;
                     inek.KonumY = inekKonumYukseklik;
 
-
-
                     if (kurt.KonumX == koyun.KonumX && koyunSayisi != 0) koyunSayisi--;
                     if (kurt.KonumY == koyun.KonumY && koyunSayisi != 0) koyunSayisi--;
                     if (kurt.KonumX == horoz.KonumX && horozSayisi != 0) horozSayisi--;
@@ -171,25 +156,16 @@ namespace CA_AnimalsGame
                     if (avci.KonumY == tavuk.KonumY && tavukSayisi != 0) tavukSayisi--;
                     if (avci.KonumX == horoz.KonumX && horozSayisi != 0) horozSayisi--;
                     if (avci.KonumY == horoz.KonumY && horozSayisi != 0) horozSayisi--;
-
-
-                    
-                    
-
-
                 }
-
                 Console.WriteLine("Kalan Koyun Sayisi =" + " " + koyunSayisi);
                 Console.WriteLine("Kalan Tavuk Sayisi =" + " " + tavukSayisi);
                 Console.WriteLine("Kalan Horoz Sayisi =" + " " + horozSayisi);
                 Console.WriteLine("Kalan Inek Sayisi =" + " " + inekSayisi);
                 Console.WriteLine("Kalan Aslan Sayisi =" + " " + aslanSayisi);
                 Console.WriteLine("Kalan Kurt Sayisi =" + " " + kurtSayisi);
-
-
                 Console.Read();
-            }
-
+            } 
+            #endregion
         }
         #region OlusturmaMetot
         static List<Koyun> KoyunOlustur()
@@ -350,13 +326,6 @@ namespace CA_AnimalsGame
 
         }
         #endregion
-
     }
-
-
-
-
-
-
 }
 
