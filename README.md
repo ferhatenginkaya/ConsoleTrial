@@ -1,8 +1,8 @@
 # ConsoleTrial
-Deneme
 
 
-not:belirtmek isterim ki, incelediğiniz projenin ne yazık ki eksikleri var..
+
+
 
 Merhabalar,
 
@@ -36,4 +36,5 @@ Projenin, bariz en önemli pragrafı.
 Kurt'a ait iki konum bilgisi var, KonumX ve KonumY. 
 KonumX'in etrafında koyun,tavuk,horoz var mı? kod kısmına aktaramadım.
 Ulaşabildiğim sonuç ise kurt'un X konumu ile koyunun X konumu eşitse avlayabilir olması, bu işlem diğer hayvanlarda ise tekrarlandı.
+
 
