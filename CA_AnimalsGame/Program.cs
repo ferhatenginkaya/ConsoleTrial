@@ -2,15 +2,12 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CA_AnimalsGame
 {
 
     class Program
     {
-
         /*
         Hayvanat Bahçesi Projesi
         500'e 500'lük bir alanda yaşayan 30 koyun (15 erkek,15 dişi), 10 inek (5 erkek,5 dişi), 10 tavuk,
@@ -28,24 +25,21 @@ namespace CA_AnimalsGame
         aslan kendisine 5 birim yakınlıktaki inek, koyun'u avlayabiliyor.
         avcıda kendisine 8 birim yakınlıktaki hayvanlardan herhangi birisini avlayabiliyor.
         aynı cins farklı cinsiyetteki hayvanlar birbirine 3 birim yakınlaştığı zaman random cinsiyetli ve aynı cins  
-        bir hayvan meydana gelmektedir.
+        bir hayvan meydana gelmektedir. // yapılamadı.
         1000 birim hareket sonunda hayvanların sayısının bulunduğu bir console application yazılması 
         beklenmektedir.
         */
-
-        //Pointer
-
-       
-
         static void Main(string[] args)
+
         {
+            #region ornekAlma
             Arazi arazi = new Arazi();
             Random rnd = new Random();
-            Hayvan hayvan = new Hayvan();
-            Avci avci = new Avci();
-            Koyun koyun = new Koyun();
-            Aslan aslan = new Aslan();
+            
 
+            #endregion
+
+            #region Listeleme
             List<Koyun> koyunListesi = KoyunOlustur();
             List<Aslan> aslanListesi = AslanOlustur();
             List<Inek> inekListesi = InekOlustur();
@@ -53,28 +47,151 @@ namespace CA_AnimalsGame
             List<Horoz> horozListesi = HorozOlustur();
             List<Tavuk> tavukListesi = TavukOlustur();
             List<Avci> avciListesi = AvciOlustur();
-            Console.WriteLine("Hayvanlar Oluşturuldu");
-            Console.Read();
+            #endregion
 
+            #region toplam
             int koyunSayisi = koyunListesi.Count();
             int aslanSayisi = aslanListesi.Count();
             int inekSayisi = inekListesi.Count();
             int kurtSayisi = kurtListesi.Count();
             int horozSayisi = horozListesi.Count();
-            int tavukSayisi = tavukListesi.Count();    
+            int tavukSayisi = tavukListesi.Count();
+            #endregion
+
+            #region HayvanAraziEkleme
+            foreach (var k in koyunListesi)
+            {
+                arazi.Hayvanlar.Add(k);
+            }
+            foreach (var a in aslanListesi)
+            {
+                arazi.Hayvanlar.Add(a);
+            }
+            foreach (var i in inekListesi)
+            {
+                arazi.Hayvanlar.Add(i);
+            }
+            foreach (var ku in kurtListesi)
+            {
+                arazi.Hayvanlar.Add(ku);
+            }
+            foreach (var h in horozListesi)
+            {
+                arazi.Hayvanlar.Add(h);
+            }
+            foreach (var t in tavukListesi)
+            {
+                arazi.Hayvanlar.Add(t);
+            }
+            #endregion
+
+
+            foreach (var h in arazi.Hayvanlar)
+            {
+             
+
+                //Avci konum verecek,
+                int araziRandomGenislik = rnd.Next(0, arazi.En);
+                int araziRandomYukseklik = rnd.Next(0, arazi.Boy);
+
+                Avci avci = new Avci();
+                avci.KonumX = araziRandomGenislik;
+                avci.KonumY = araziRandomYukseklik;
+                Koyun koyun = new Koyun();
+                Aslan aslan = new Aslan();
+                Kurt kurt = new Kurt();
+                Horoz horoz = new Horoz();
+                Tavuk tavuk = new Tavuk();
+                Inek inek = new Inek();
+
+                //        koyun 2 birim,++
+                //kurt 3 birim,+
+                //inek 2 birim,
+                //tavuk 1 birim,+
+                //horoz 1 birim,+
+                //aslan 4 birim,+
+
+                //kurt'un bir konumu olmalı (x,y)
+                //koyun, tavuk, horoz konum tanımlanmalı (x,y)
+                //kurt'ın x değeri koyun'un x'ine eşit ve 
+
+
+                for (int i = 0; i < 1000; i++)
+                {
+                    //Kurt Konum verecek,              
+                    int kurtKonumGenislik = rnd.Next(0, arazi.En);
+                    int kurtKonumYukseklik = rnd.Next(0, arazi.Boy);
+                    kurt.KonumX = kurtKonumGenislik;
+                    kurt.KonumY = kurtKonumYukseklik;
+                    //Koyun konum verecek,                
+                    int koyunKonumGenislik = rnd.Next(0, arazi.En);
+                    int koyunKonumYukseklik = rnd.Next(0, arazi.Boy);
+                    koyun.KonumX = koyunKonumGenislik;
+                    koyun.KonumY = koyunKonumYukseklik;
+                    //Tavuk konum verecek
+                    int tavukKonumGenislik = rnd.Next(0, arazi.En);
+                    int tavukKonumYukseklik = rnd.Next(0, arazi.Boy);
+                    tavuk.KonumX = tavukKonumGenislik;
+                    tavuk.KonumY = tavukKonumYukseklik;
+                    //Horoz konum verecek,
+                    int horozKonumGenislik = rnd.Next(0, arazi.En);
+                    int horozKonumYukseklik = rnd.Next(0, arazi.Boy);
+                    horoz.KonumX = horozKonumGenislik;
+                    horoz.KonumY = horozKonumYukseklik;
+                    //Aslan konum verecek,
+                    int aslanKonumGenislik = rnd.Next(0, arazi.En);
+                    int aslanKonumYukseklik = rnd.Next(0, arazi.Boy);
+                    aslan.KonumX = aslanKonumGenislik;
+                    aslan.KonumY = aslanKonumYukseklik;
+                    //Inek konum verecek,
+                    int inekKonumGenislik = rnd.Next(0, arazi.En);
+                    int inekKonumYukseklik = rnd.Next(0, arazi.Boy);
+                    inek.KonumX = inekKonumGenislik;
+                    inek.KonumY = inekKonumYukseklik;
 
 
 
+                    if (kurt.KonumX == koyun.KonumX && koyunSayisi != 0) koyunSayisi--;
+                    if (kurt.KonumY == koyun.KonumY && koyunSayisi != 0) koyunSayisi--;
+                    if (kurt.KonumX == horoz.KonumX && horozSayisi != 0) horozSayisi--;
+                    if (kurt.KonumY == horoz.KonumY && horozSayisi != 0) horozSayisi--;
+                    if (kurt.KonumX == tavuk.KonumX && tavukSayisi != 0) tavukSayisi--;
+                    if (kurt.KonumY == tavuk.KonumY && tavukSayisi != 0) tavukSayisi--;
+                    if (aslan.KonumX == inek.KonumX && inekSayisi != 0) inekSayisi--;
+                    if (aslan.KonumY == inek.KonumY && inekSayisi != 0) inekSayisi--;
+                    if (aslan.KonumX == koyun.KonumX && koyunSayisi != 0) koyunSayisi--;
+                    if (aslan.KonumY == koyun.KonumY && koyunSayisi != 0) koyunSayisi--;
+                    if (avci.KonumX == kurt.KonumX && kurtSayisi != 0) kurtSayisi--;
+                    if (avci.KonumY == kurt.KonumY && kurtSayisi != 0) kurtSayisi--;
+                    if (avci.KonumX == koyun.KonumX && koyunSayisi != 0) koyunSayisi--;
+                    if (avci.KonumY == koyun.KonumY && koyunSayisi != 0) koyunSayisi--;
+                    if (avci.KonumX == inek.KonumX && inekSayisi != 0) inekSayisi--;
+                    if (avci.KonumY == inek.KonumY && inekSayisi != 0) inekSayisi--;
+                    if (avci.KonumX == tavuk.KonumX && tavukSayisi != 0) tavukSayisi--;
+                    if (avci.KonumY == tavuk.KonumY && tavukSayisi != 0) tavukSayisi--;
+                    if (avci.KonumX == horoz.KonumX && horozSayisi != 0) horozSayisi--;
+                    if (avci.KonumY == horoz.KonumY && horozSayisi != 0) horozSayisi--;
 
 
+                    
+                    
 
 
+                }
+
+                Console.WriteLine("Kalan Koyun Sayisi =" + " " + koyunSayisi);
+                Console.WriteLine("Kalan Tavuk Sayisi =" + " " + tavukSayisi);
+                Console.WriteLine("Kalan Horoz Sayisi =" + " " + horozSayisi);
+                Console.WriteLine("Kalan Inek Sayisi =" + " " + inekSayisi);
+                Console.WriteLine("Kalan Aslan Sayisi =" + " " + aslanSayisi);
+                Console.WriteLine("Kalan Kurt Sayisi =" + " " + kurtSayisi);
 
 
-
+                Console.Read();
+            }
 
         }
-
+        #region OlusturmaMetot
         static List<Koyun> KoyunOlustur()
         {
             List<Koyun> koyunListesi = new List<Koyun>();
@@ -231,8 +348,15 @@ namespace CA_AnimalsGame
 
             return avciListesi;
 
-
         }
+        #endregion
 
     }
+
+
+
+
+
+
 }
+
